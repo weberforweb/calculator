@@ -8,4 +8,10 @@ def insert_text(btn_item, label):
             label['text'] = str(eval(current)) #should convert to string for possibility of +=
 
     else:
-        label['text'] += btn_item #with += items can concatenate
+        if btn_item == '+' or btn_item == '-' or btn_item == '*':
+            if current[-1] == '+' or current[-1] == '-' or current[-1] == '*':
+                label['text'] = current[:-1] + btn_item
+            else:
+                label['text'] += btn_item
+        else:
+            label['text'] += btn_item #with += items can concatenate
