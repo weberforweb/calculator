@@ -1,18 +1,13 @@
 
-from tkinter import ttk
 from tkinter import W
 
-def btn_creation(button_items , window):
-    for items in button_items:
-        btn_button_items = ttk.Button(
-            master = window,
-            text = items,
-        )    
-        if items in range(1,4) or items == '+':        
-            btn_button_items.grid(row = 1, column = button_items.index(items), sticky = (W,))
-        elif items in range(4,7) or items == '-':        
-            btn_button_items.grid(row = 2, column = button_items.index(items) -4, sticky = (W,))
-        elif items in range(7,10) or items == '*':
-            btn_button_items.grid(row = 3, column = button_items.index(items) -8, sticky = (W,))
+def btn_creation(btn_list , window):
+    for i , items in enumerate(btn_list): #return tuple: i=index and items=element
+        if i < 4:
+            items.grid(row = 1, column = i, sticky = (W,))
+        elif i >= 4 and i < 8:
+            items.grid(row = 2, column = i -4, sticky = (W,))
+        elif i >= 8 and i < 12:
+            items.grid(row = 3, column = i -8, sticky = (W,))
         else:
-            btn_button_items.grid(row = 4, column = button_items.index(items) -12, sticky = (W,), pady = (0,5))
+            items.grid(row = 4, column = i -12, sticky = (W,), pady = (0,5))
