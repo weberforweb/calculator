@@ -4,7 +4,7 @@ import os
 from button_generator import btn_creation
 os.system('cls')
 import tkinter as tk
-from tkinter import ttk
+from tkinter import ttk, END
 from button_generator import btn_creation
 
 window = tk.Tk()
@@ -13,12 +13,13 @@ window.title('My Calculator')
 
 lbl_result_screen = tk.Label(
     master = window,
+    # text = 0,
     height = 3,
 )
-lbl_result_screen.grid(row = 0, column = 0)
+
 
 def insert_text(btn_item):
-    lbl_result_screen['text'] = btn_item
+    lbl_result_screen['text'] += btn_item
 
 button_items = [
     {'text': '1',
@@ -66,5 +67,11 @@ for item in button_items:
     btn_list.append(btn_button_items)
 
 
+
+lbl_result_screen.grid(row = 0, column = 0)
+
+
+
 btn_creation(btn_list , window)
+
 window.mainloop()
