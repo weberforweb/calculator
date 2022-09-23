@@ -4,7 +4,7 @@ import os
 from button_generator import btn_creation
 os.system('cls')
 import tkinter as tk
-from tkinter import ttk, END
+from tkinter import ttk
 from button_generator import btn_creation
 from show_result import insert_text
 
