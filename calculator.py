@@ -11,15 +11,25 @@ window = tk.Tk()
 
 window.title('My Calculator')
 
+# input_text = tk.StringVar()
+
 lbl_result_screen = tk.Label(
     master = window,
-    # text = 0,
+    # text = input_text,
     height = 3,
 )
 
+button_list = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '+', '-', '*', '.', '=', 'C']
 
 def insert_text(btn_item):
-    lbl_result_screen['text'] += btn_item
+    current = lbl_result_screen['text']
+    result = 0
+    if btn_item == '=':
+        if btn_item in button_list: #it is important for secure running of eval()
+            lbl_result_screen['text'] = eval(current)
+
+    else:
+        lbl_result_screen['text'] += btn_item # with += items can concatenate
 
 button_items = [
     {'text': '1',
@@ -65,6 +75,8 @@ for item in button_items:
     )
 
     btn_list.append(btn_button_items)
+
+# print(lbl_result_screen.cget('text'))
 
 
 
