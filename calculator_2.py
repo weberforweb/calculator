@@ -84,9 +84,5 @@ for item in BUTTON_DIC:
     btn_list.append(button_item)
 
 
-
-
-
-
 button_generator(btn_list)
 window.mainloop()
