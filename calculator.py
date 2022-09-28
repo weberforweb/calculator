@@ -14,6 +14,7 @@ window.title('My Calculator')
 
 lbl_result_screen = tk.Label(
     master = window,
+    text = '0',
     height = 3,
 )
 
