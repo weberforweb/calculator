@@ -2,7 +2,7 @@
 import os
 os.system('cls')
 import tkinter as tk
-from tkinter import ttk
+from button_generator_2 import button_generator
 
 window = tk.Tk()
 
@@ -15,17 +15,10 @@ result_box = tk.Label(
 
 result_box.grid (row = 0, column = 0)
 
-def button_generator():
-    for item in button_dic:
-        button_item = ttk.Button(
-                master = window,
-                text = item,
-                # command = print('hello')
-            )
-        button_item.grid (row = (button_dic.index(item) // 4) + 1, column = button_dic.index(item) %4 )
 
 
 
 
-button_generator()
+
+button_generator(button_dic)
 window.mainloop()
